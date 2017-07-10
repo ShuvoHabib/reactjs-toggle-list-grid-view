@@ -1,10 +1,15 @@
 import React, { Component } from "react";
+import classNames from 'classnames';
 import "./App.css";
 import workorder from "./workorder";
 
 const PersonRow = (props) => {
+    let btnClass = classNames('item col-xs-6 col-sm-4 col-md-4 col-lg-3',{
+            'list-group-item': props.listView,
+            'grid-group-item': props.gridView,
+    });
     return (
-        <div className="item  col-xs-6 col-sm-4 col-md-4 col-lg-3">
+        <div className={btnClass}>
             <div className="thumbnail">
                 <div className="caption">
                     <h4 className="group inner list-group-item-heading">
