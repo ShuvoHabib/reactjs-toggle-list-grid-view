@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import "./App.css";
 
 const PersonRow = (props) => {
-    let btnClass = classNames('thumbnail',{
-        '': props.listView,
+    let btnClass = classNames('',{
+        'thumbnail': props.listView,
         ' col-xs-6 col-sm-4 col-md-4 col-lg-3': props.gridView,
     });
     return (

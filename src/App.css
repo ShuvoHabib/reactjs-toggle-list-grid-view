@@ -2,10 +2,15 @@
 .thumbnail
 {
     margin-bottom: 20px;
-    padding: 0px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
+    padding: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.grid-group-item .caption{
+    border:1px solid #666666;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 .grid-group-item .table-row{
@@ -24,13 +29,9 @@
     background: #e6e6e6;
 }
 
-.item.list-group-item .list-group-image
-{
-    margin-right: 10px;
-}
 .item.list-group-item .thumbnail
 {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 .item.list-group-item .caption
 {
@@ -45,14 +46,26 @@
     -webkit-flex-wrap: wrap;
     width: 100%;
 }
+.list-group-item{
+    border: none;
+}
 .list-group-item .list-text-block{
     flex-grow: 1;
     overflow: hidden;
-    width: 30px;
+    width: 45px;
     padding-right: 20px;
 }
+
+.list-group-item  .list-date{
+    width: 50px;
+}
+.table-row.header.caption{
+    background: #666;
+    color: #fff;
+}
+
 .list-group-item .list-group-item-heading{
-    width: 400px;
+    width: 350px;
 }
 .item.list-group-item:nth-of-type(odd)
 {
