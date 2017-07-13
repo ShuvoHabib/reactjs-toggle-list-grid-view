@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { findDOMNode } from 'react-dom';
 import classNames from 'classnames';
-import ReactTooltip from 'simple-react-tooltip'
 import "./App.css";
 import WorkOrders from "./WorkOrders";
 import ProductRow from "./ProductRow";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 class App extends Component {
     state = {
@@ -56,7 +57,7 @@ class App extends Component {
                 gridView={this.state.gridView}
             />
         });
-        return <div className="container-fluid">
+        return <div className="container">
             <div className="modal fade bs-example-modal-sm in" tabindex="-1" style={{ 'display': modalStyle }}>
                 <div className="modal-dialog modal-sm" role="document">
                     <div className="modal-content">
@@ -82,62 +83,41 @@ class App extends Component {
                     </div>
                 </div>
             </div>
-            <div className="container">
-                <div className="row">
-                    {/*<header>*/}
-                    {/*<img src="fn-logo.png" alt="Field Nation"/>*/}
-                    {/*</header>*/}
-                </div>
-                <div className="row row-eq-height gray-bg">
-                    <div className="col-sm-3 sidebar ">
-                        <div className="media user-details">
-                            <div className="media-left">
-                                <a href="#">
-                                    <img className="media-object" width="80" src="user.png" alt="User"/>
-                                </a>
-                            </div>
-                            <div className="media-body">
-                                <h4 className="media-heading">{this.state.value}</h4>
-                                <span>547</span>
-                            </div>
-                            <div className="media-right">
-                                <ReactTooltip/>
-                                <button onClick={this.showModal} type="button" className="btn btn-default tt-btn"
-                                        data-tip="Edit your Name" data-place="right">
-                                    Edit
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-sm-9">
-                        <div className="btn-group">
+            <div className="row">
+                {/*<Header/>*/}
+            </div>
+            <div className="row row-eq-height gray-bg">
+                <Sidebar
+                    value = {this.state.value}
+                    showModal = {this.showModal}
+                />
+                <div className="col-sm-9">
+                    <div className="btn-group">
                         <span onClick={this.handleList} id="list" className="btn btn-default btn-sm">
                             <i className="glyphicon glyphicon-th-list"/>List
                         </span>
-                            <span onClick={this.handleGrid} id="grid" className="btn btn-default btn-sm">
+                        <span onClick={this.handleGrid} id="grid" className="btn btn-default btn-sm">
                             <i className="glyphicon glyphicon-th"/>Grid
                         </span>
+                    </div>
+                    <div className={btnClass}>
+                        <div className="row auto-clear">
+                            <div className="table-row header caption">
+                                <div className="list-group-item-heading list-text-block">Title</div>
+                                <div className=" list-text-block">Id</div>
+                                <div className=" list-text-block">Status</div>
+                                <div className=" list-text-block">Location</div>
+                                <div className=" list-text-block">Pay</div>
+                                <div className="list-date list-text-block">Date/Time</div>
+                            </div>
                         </div>
-                        <div className={btnClass}>
-                            <div className="row auto-clear">
-                                <div className="table-row header caption">
-                                    <div className="list-group-item-heading list-text-block">Title</div>
-                                    <div className=" list-text-block">Id</div>
-                                    <div className=" list-text-block">Status</div>
-                                    <div className=" list-text-block">Location</div>
-                                    <div className=" list-text-block">Pay</div>
-                                    <div className="list-date list-text-block">Date/Time</div>
-                                </div>
-                            </div>
-                            <div className="row auto-clear">
-                                {rows}
-                            </div>
+                        <div className="row auto-clear">
+                            {rows}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     }
 }
 
