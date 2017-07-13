@@ -20,6 +20,10 @@ header {
     background: rgba(0, 0, 0, 0.53);
 }
 
+.item.list-group-item{
+    padding: 0;
+}
+
 .glyphicon { margin-right:5px; }
 
 .thumbnail
