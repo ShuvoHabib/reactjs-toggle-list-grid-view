@@ -1,8 +1,12 @@
+
+
 header {
     background: #292929;
-    padding: 10px;
+    padding: 15px;
 }
-
+.main-container{
+    padding: 0 35px;
+}
 .sidebar{
     background: #343433;
 }
@@ -19,7 +23,9 @@ header {
 .modal{
     background: rgba(0, 0, 0, 0.53);
 }
-
+.grid-space{
+    padding: 10px 0;
+}
 .item.list-group-item{
     padding: 0;
 }
@@ -81,9 +87,8 @@ p.toolTip-show {
     background-color: #fff;
     margin-bottom: 10px;
 }
-.list-group-item .thumbnail:nth-child(odd)
-{
-    background: #e6e6e6;
+.list-group-item .thumbnail:nth-child(even) {
+    background: #f2f2f2;
 }
 
 .item.list-group-item .thumbnail
@@ -112,16 +117,29 @@ p.toolTip-show {
     padding-right: 20px;
 }
 
+.header.caption > .list-text-block{
+    font-weight: bold;
+}
+
 .list-group-item  .list-date{
     width: 50px;
 }
-.table-row.header.caption{
+.table-row.header.caption {
     background: #666;
     color: #fff;
+    padding: 9px 5px 3px 5px;
 }
 
 .list-group-item .list-group-item-heading{
     width: 350px;
+}
+
+p.list-status.list-text-block {
+    margin-right: 20px;
+}
+
+.list-group-item .list-group-item-id{
+    width: 10px !important;
 }
 
 .item.list-group-item:before, .item.list-group-item:after
@@ -170,4 +188,50 @@ p.toolTip-show {
     .auto-clear .col-xs-3:nth-child(4n+1){clear:left;}
     .auto-clear .col-xs-4:nth-child(3n+1){clear:left;}
     .auto-clear .col-xs-6:nth-child(odd){clear:left;}
+}
+
+/*Status Color*/
+
+.draft-color {
+    background: #666666;
+    height: 29px;
+    border-radius: 17px;
+    color: white;
+    line-height: 28px;
+    text-indent: 25px;
+}
+.published-color{
+    background: #298372;
+    height: 29px;
+    border-radius: 17px;
+    color: white;
+    line-height: 28px;
+    text-indent: 8px;
+}
+
+.routed-color{
+    background: #3a6bb4;
+    height: 29px;
+    border-radius: 17px;
+    color: white;
+    line-height: 28px;
+    text-indent: 20px;
+}
+
+.work-color{
+    background: #666666;
+    height: 29px;
+    border-radius: 17px;
+    color: white;
+    line-height: 28px;
+    text-indent: 25px;
+}
+
+.assigned-color{
+    background: #3a6bb4;
+    height: 29px;
+    border-radius: 17px;
+    color: white;
+    line-height: 28px;
+    text-indent: 15px;
 }

@@ -84,16 +84,16 @@ class App extends Component {
                 </div>
             </div>
             <div className="row">
-                {/*<Header/>*/}
+                <Header/>
             </div>
             <div className="row row-eq-height gray-bg">
                 <Sidebar
                     value = {this.state.value}
                     showModal = {this.showModal}
                 />
-                <div className="col-sm-9">
+                <div className="col-sm-9 main-container">
                     <div className="row">
-                        <div className="col-sm-offset-8 col-sm-4 text-right">
+                        <div className="col-sm-offset-8 col-sm-4 text-right grid-space">
                             <BtnGroup
                                 handleList={this.handleList}
                                 handleGrid={this.handleGrid}
