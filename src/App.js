@@ -1,6 +1,7 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+import { findDOMNode } from 'react-dom';
 import classNames from 'classnames';
-import TooltipButton from 'react-bootstrap-tooltip-button';
+import ReactTooltip from 'simple-react-tooltip'
 import "./App.css";
 import WorkOrders from "./WorkOrders";
 import ProductRow from "./ProductRow";
@@ -34,9 +35,9 @@ class App extends Component {
             modalVisibility: false,
         })
     };
-    handleSubmit = (event) => {
+    handleSave = (event) => {
         this.setState({
-            value: event.target.value,
+            value: this.refs.nameForm.value,
             modalVisibility: false,
         });
     };
@@ -56,37 +57,36 @@ class App extends Component {
             />
         });
         return <div className="container-fluid">
-            <div className="modal fade bs-example-modal-sm in" tabindex="-1" style={{'display': modalStyle}}>
+            <div className="modal fade bs-example-modal-sm in" tabindex="-1" style={{ 'display': modalStyle }}>
                 <div className="modal-dialog modal-sm" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h4 className="modal-title" id="mySmallModalLabel">Edit Name</h4>
                         </div>
                         <div className="modal-body">
-                            <form >
-                                <div className="form-group">
-                                    <label>Name
-                                        <input onSubmit ={this.handleSubmit} type="text" name="name" id="name" value={this.state.value}
-                                               className="form-control"/>
-                                    </label><br />
-                                    <input type="submit" value="Submit" />
-                                </div>
-                            </form>
+                            <div className="form-group">
+                                <label>Name
+                                    <input
+                                        ref="nameForm" type="text" name="name" id="name"
+                                        className="form-control" defaultValue={this.state.value}
+                                    />
+                                </label><br />
+                            </div>
                         </div>
                         <div className="modal-footer">
                             <button onClick={this.hideModal} type="button" className="btn btn-default"
                                     data-dismiss="modal">Cancel
                             </button>
-                            <button onSubmit={this.hideModal} type="button" className="btn btn-success">Save</button>
+                            <button onClick={this.handleSave} type="button" className="btn btn-success">Save</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="container">
                 <div className="row">
-                    <header>
-                        <img src="fn-logo.png" alt="Field Nation"/>
-                    </header>
+                    {/*<header>*/}
+                    {/*<img src="fn-logo.png" alt="Field Nation"/>*/}
+                    {/*</header>*/}
                 </div>
                 <div className="row row-eq-height gray-bg">
                     <div className="col-sm-3 sidebar ">
@@ -101,14 +101,11 @@ class App extends Component {
                                 <span>547</span>
                             </div>
                             <div className="media-right">
-                                <TooltipButton
-                                    title='Edit'
-                                    onClick={this.showModal}
-                                    tooltipText='You need to be logged in to use this button'
-                                    tooltipId='tt1'
-                                    tooltipPlacement="right"
-                                />
-
+                                <ReactTooltip/>
+                                <button onClick={this.showModal} type="button" className="btn btn-default tt-btn"
+                                        data-tip="Edit your Name" data-place="right">
+                                    Edit
+                                </button>
                             </div>
                         </div>
                     </div>
