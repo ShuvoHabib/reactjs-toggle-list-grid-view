@@ -1,8 +1,9 @@
 import React, {Component} from "react";
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import "./App.css";
 
-const PersonRow = (props) => {
+const ProductRow = (props) => {
     let btnClass = classNames('',{
         'thumbnail': props.listView,
         ' col-xs-6 col-sm-4 col-md-4 col-lg-3': props.gridView,
@@ -31,6 +32,11 @@ const PersonRow = (props) => {
             </div>
         </div>
     );
-}
+};
 
-export default PersonRow;
+ProductRow.propTypes = {
+    listView: PropTypes.bool,
+    gridView: PropTypes.bool,
+};
+
+export default ProductRow;

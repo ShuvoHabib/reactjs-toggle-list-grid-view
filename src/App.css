@@ -1,4 +1,27 @@
+header {
+    background: #292929;
+    padding: 10px;
+}
+
+.sidebar{
+    background: #343433;
+}
+
+.gray-bg{
+    background: #eeeeee;
+}
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+}
+.modal{
+    background: rgba(0, 0, 0, 0.53);
+}
+
 .glyphicon { margin-right:5px; }
+
 .thumbnail
 {
     margin-bottom: 20px;
@@ -6,6 +29,36 @@
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
+    transition: initial;
+}
+.sidebar{
+    color: #fff;
+}
+.toolTip-show, .arrow-left{
+    display: none;
+}
+.tt-btn:hover + .toolTip-show{
+    display: block;
+}
+
+.tt-btn:hover + .arrow-left{
+    display: block;
+}
+.media.user-details {
+    margin-top: 20px;
+}
+
+p.toolTip-show {
+    position: absolute;
+    right: -135px;
+    top: 17px;
+    background: #EEEEEE;
+    padding: 10px;
+    border: 1px solid black;
+    z-index: 99;
+    color: black;
+    cursor: pointer;
+    border-radius: 6px;
 }
 .grid-group-item .caption{
     border:1px solid #666666;
@@ -35,7 +88,6 @@
 }
 .item.list-group-item .caption
 {
-    padding: 9px 9px 0px 9px;
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
@@ -66,10 +118,6 @@
 
 .list-group-item .list-group-item-heading{
     width: 350px;
-}
-.item.list-group-item:nth-of-type(odd)
-{
-    background: #eeeeee;
 }
 
 .item.list-group-item:before, .item.list-group-item:after
