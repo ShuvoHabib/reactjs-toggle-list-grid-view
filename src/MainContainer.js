@@ -21,12 +21,12 @@ const MainContainer = (props) => {
     return (
         <div className="col-sm-9">
             <div className="btn-group">
-                        <span onClick={props.handleList} id="list" className="btn btn-default btn-sm">
-                            <i className="glyphicon glyphicon-th-list"/>List
-                        </span>
+                <span onClick={props.handleList} id="list" className="btn btn-default btn-sm">
+                    <i className="glyphicon glyphicon-th-list"/>List
+                </span>
                 <span onClick={props.handleGrid} id="grid" className="btn btn-default btn-sm">
-                            <i className="glyphicon glyphicon-th"/>Grid
-                        </span>
+                    <i className="glyphicon glyphicon-th"/>Grid
+                </span>
             </div>
             <div className={btnClass}>
                 <div className="row auto-clear">

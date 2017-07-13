@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { findDOMNode } from 'react-dom';
 import classNames from 'classnames';
 import "./App.css";
 import WorkOrders from "./WorkOrders";
 import ProductRow from "./ProductRow";
 import Header from "./Header";
+import BtnGroup from "./BtnGroup";
 import Sidebar from "./Sidebar";
 
 class App extends Component {
@@ -92,14 +92,10 @@ class App extends Component {
                     showModal = {this.showModal}
                 />
                 <div className="col-sm-9">
-                    <div className="btn-group">
-                        <span onClick={this.handleList} id="list" className="btn btn-default btn-sm">
-                            <i className="glyphicon glyphicon-th-list"/>List
-                        </span>
-                        <span onClick={this.handleGrid} id="grid" className="btn btn-default btn-sm">
-                            <i className="glyphicon glyphicon-th"/>Grid
-                        </span>
-                    </div>
+                    <BtnGroup
+                        handleList={this.handleList}
+                        handleGrid={this.handleGrid}
+                    />
                     <div className={btnClass}>
                         <div className="row auto-clear">
                             <div className="table-row header caption">
