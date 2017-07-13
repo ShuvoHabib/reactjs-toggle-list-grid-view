@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import classNames from 'classnames';
+import TooltipButton from 'react-bootstrap-tooltip-button';
 import "./App.css";
 import WorkOrders from "./WorkOrders";
 import ProductRow from "./ProductRow";
@@ -36,7 +37,7 @@ class App extends Component {
     handleSubmit = (event) => {
         this.setState({
             value: event.target.value,
-            modalVisibility: true,
+            modalVisibility: false,
         });
     };
 
@@ -62,10 +63,10 @@ class App extends Component {
                             <h4 className="modal-title" id="mySmallModalLabel">Edit Name</h4>
                         </div>
                         <div className="modal-body">
-                            <form onSubmit={this.handleSubmit}>
+                            <form >
                                 <div className="form-group">
                                     <label>Name
-                                        <input type="text" name="name" id="name" value={this.state.value}
+                                        <input onSubmit ={this.handleSubmit} type="text" name="name" id="name" value={this.state.value}
                                                className="form-control"/>
                                     </label><br />
                                     <input type="submit" value="Submit" />
@@ -100,10 +101,14 @@ class App extends Component {
                                 <span>547</span>
                             </div>
                             <div className="media-right">
-                                <button onClick={this.showModal} type="button" className="btn btn-default tt-btn">
-                                    Edit
-                                </button>
-                                <p className="toolTip-show">Click to edit name</p>
+                                <TooltipButton
+                                    title='Edit'
+                                    onClick={this.showModal}
+                                    tooltipText='You need to be logged in to use this button'
+                                    tooltipId='tt1'
+                                    tooltipPlacement="right"
+                                />
+
                             </div>
                         </div>
                     </div>

@@ -6,8 +6,11 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
+    "react-bootstrap-tooltip-button": "^1.0.5",
     "react-dom": "^15.6.1",
-    "react-scripts": "1.0.10"
+    "react-scripts": "1.0.10",
+    "react-simple-tooltip": "^1.0.5",
+    "react-tipsy": "^0.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
