@@ -6,7 +6,7 @@ import "./App.css";
 const ProductRow = (props) => {
     let btnClass = classNames('',{
         'thumbnail': props.listView,
-        ' col-xs-6 col-sm-4 col-md-4 col-lg-3': props.gridView,
+        ' col-xs-12 col-sm-6 col-md-4 col-lg-3 thumbnail-grid': props.gridView,
     });
     let statusClass = classNames('list-status list-text-block',{
         'draft-color': props.data.status === 'Draft',
@@ -19,20 +19,28 @@ const ProductRow = (props) => {
         <div className={btnClass}>
             <div className="caption">
                 <h4 className="group inner list-group-item-heading list-text-block">
-                    {props.data.title}</h4>
+                    {props.data.title}
+                </h4>
                 <p className="group inner list-group-item-text list-group-item-id list-text-block">
+                    <strong>Id:</strong>
                     {props.data.id}
                 </p>
-                <p className={statusClass}>{props.data.status}</p>
+                    <p className={statusClass}>
+                        <strong>Status:</strong>
+                    {props.data.status}
+                </p>
                 <p className="list-address list-text-block">
+                    <strong>Address:</strong>
                     {props.data.address1}
                     {props.data.address2}
                 </p>
                 <p className="list-amount list-text-block">
-                    {props.data.pay_amount}<br/>
+                    <strong>Pay:</strong>
+                    {props.data.pay_amount}
                     {props.data.pay_type}
                 </p>
                 <p className="list-date list-text-block">
+                    <strong>Service Date:</strong>
                     {props.data.service_date}<br/>
                     {props.data.service_time}
                 </p>

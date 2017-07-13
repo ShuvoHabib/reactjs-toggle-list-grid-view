@@ -5,10 +5,10 @@ import "./App.css";
 const BtnGroup = (props) => {
     return (
         <div className="btn-group" >
-            <span onClick={props.handleList} id="list" className="btn btn-default btn-sm">
+            <span onClick={props.handleList} id="list" className="btn btn-default btn-xs">
                 <i className="glyphicon glyphicon-th-list"/>
             </span>
-            <span onClick={props.handleGrid} id="grid" className="btn btn-default btn-sm">
+            <span onClick={props.handleGrid} id="grid" className="btn btn-default btn-xs">
                 <i className="glyphicon glyphicon-th"/>
             </span>
         </div>

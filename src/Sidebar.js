@@ -5,7 +5,7 @@ import "./App.css";
 
 const Sidebar = (props) => {
     return (
-        <div className="col-sm-3 sidebar ">
+        <div className="col-sm-3 col-xs-12 sidebar">
             <div className="media user-details">
                 <div className="media-left">
                     <a href="#">
