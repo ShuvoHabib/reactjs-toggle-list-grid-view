@@ -92,10 +92,15 @@ class App extends Component {
                     showModal = {this.showModal}
                 />
                 <div className="col-sm-9">
-                    <BtnGroup
-                        handleList={this.handleList}
-                        handleGrid={this.handleGrid}
-                    />
+                    <div className="row">
+                        <div className="col-sm-offset-8 col-sm-4 text-right">
+                            <BtnGroup
+                                handleList={this.handleList}
+                                handleGrid={this.handleGrid}
+                            />
+                        </div>
+                    </div>
+
                     <div className={btnClass}>
                         <div className="row auto-clear">
                             <div className="table-row header caption">
