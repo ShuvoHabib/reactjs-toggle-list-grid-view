@@ -92,6 +92,7 @@ class App extends Component {
                     showModal = {this.showModal}
                 />
                 <div className="col-sm-9 col-xs-12 main-container">
+                    <h2>React JS List Grid View Interchange</h2>
                     <div className="row">
                         <div className="col-sm-offset-8 col-sm-4 text-right grid-space">
                             <BtnGroup
