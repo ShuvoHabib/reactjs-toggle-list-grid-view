@@ -4,7 +4,7 @@ import "./App.css";
 const Header = () => {
     return (
         <header>
-            <img src="fn-logo.png" alt="Field Nation"/>
+            <img src="fn-logo.png" alt="Field Nation" width="200"/>
         </header>
     );
 };
